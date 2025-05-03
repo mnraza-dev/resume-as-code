@@ -8,7 +8,6 @@ interface LayoutProps {
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-900 text-white">
-      {/* Header Section */}
       <header className="bg-gray-800 py-4 shadow-md">
         <div className="max-w-7xl mx-auto flex justify-between items-center px-6">
           <div className="text-3xl font-semibold text-white">
