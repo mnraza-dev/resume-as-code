@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CodeEditor from './components/CodeEditor';
 import ResumePreview from './components/ResumePreview';
-import './App.css';
 
 const App: React.FC = () => {
   const [jsonData, setJsonData] = useState(`
@@ -19,7 +18,7 @@ const App: React.FC = () => {
   }`);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white ">
+    <div className="min-h-screen bg-gray-900 text-white px-4 py-8 ">
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Build Your Resume from JSON</h1>
         <p className="text-lg text-gray-400">Developer-friendly. Themeable. Exportable.</p>

@@ -22,7 +22,7 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange }) => {
   return (
     <MonacoEditor
       width="100%"
-      height="400"
+      height="350"
       language="json"
       theme="vs-dark"
       value={code}
