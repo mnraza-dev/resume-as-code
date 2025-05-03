@@ -137,7 +137,7 @@ const Home: React.FC = () => {
       </div>
 
       <div className="text-center">
-        <Button onClick={handlePrint}>Export as PDF</Button>
+        <Button variant={"outline"} size={"lg"} onClick={handlePrint} className='cursor-pointer'>Export as PDF</Button>
       </div>
 
       {/* Hidden printable content */}
