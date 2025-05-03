@@ -1,20 +1,16 @@
 import { useEffect, useRef } from 'react';
 import MonacoEditor from 'react-monaco-editor';
-
 interface CodeEditorProps {
   code: string;
   onChange: (newCode: string) => void;
 }
-
 const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange }) => {
   const editorRef = useRef<any>(null);
-
   useEffect(() => {
     if (editorRef.current) {
       editorRef.current.editor.setValue(code);
     }
   }, [code]);
-
   const handleEditorChange = (newCode: string) => {
     onChange(newCode);
   };
@@ -34,5 +30,4 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange }) => {
     />
   );
 };
-
 export default CodeEditor;
