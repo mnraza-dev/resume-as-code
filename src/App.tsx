@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import CodeEditor from './components/CodeEditor';
 import ResumePreview from './components/ResumePreview';
-
+import Layout from './components/Layout'; 
 const App: React.FC = () => {
   const [jsonData, setJsonData] = useState(`
   {
@@ -18,25 +18,25 @@ const App: React.FC = () => {
   }`);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white px-4 py-8 ">
+    <Layout>
       <header className="text-center mb-12">
         <h1 className="text-4xl font-bold mb-4">Build Your Resume from JSON</h1>
         <p className="text-lg text-gray-400">Developer-friendly. Themeable. Exportable.</p>
       </header>
-
       <main className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+        {/* Code Editor Section */}
         <div className="bg-gray-800 p-4 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">Your JSON</h2>
           <CodeEditor code={jsonData} onChange={setJsonData} />
         </div>
-
+        {/* Live Resume Preview Section */}
         <div className="bg-gray-800 p-4 rounded-lg">
           <h2 className="text-xl font-semibold mb-2">Live Preview</h2>
           <ResumePreview jsonData={jsonData} />
         </div>
       </main>
-    </div>
+    </Layout>
   );
-}
+};
 
 export default App;
