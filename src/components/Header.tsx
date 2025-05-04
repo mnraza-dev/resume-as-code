@@ -2,13 +2,12 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import { NavigationMenu, NavigationMenuItem, NavigationMenuList } from "@/components/ui/navigation-menu";
 import { MoonIcon, SunIcon } from 'lucide-react';
-
 import { useTheme } from '@/context/theme-provider'
 const Header: React.FC = () => {
   const { theme, setTheme } = useTheme()
   const isDark = theme === "dark";
   return (
-    <header className='sticky top-0 z-50 border-b bg-background/95  backdrop-blur py-2 supports-[backdrop-filter]:bg-background/60 '>
+    <header className='sticky top-0 z-50 border-b bg-background/95 backdrop-blur py-2 supports-[backdrop-filter]:bg-background/60 '>
       <nav className='container mx-auto flex justify-between items-center px-4 h-16'>
         <Link to="/" className="text-2xl font-bold">Resume-as-Code</Link>
         <NavigationMenu>

@@ -24,7 +24,7 @@ const steps = [
 
 const HowItWorks = () => {
     return (
-        <div className="max-w-6xl mx-auto mt-16 px-4 p-16">
+        <div className="max-w-6xl mx-auto mt-0 px-4 p-16">
             <h2 className="text-3xl font-bold text-center mb-6">How It Works</h2>
             <div className="relative">
                 {/* Line connecting steps on larger screens */}

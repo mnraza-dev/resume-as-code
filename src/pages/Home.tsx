@@ -9,6 +9,7 @@ import HowItWorks from './HowItWorks';
 import FeatureHighlights from './FeatureHighlights';
 import HeroSection from './HeroSection';
 import Testimonials from './Testimonials';
+import CTASection from './CTA';
 
 
 const Home: React.FC = () => {
@@ -114,15 +115,10 @@ const Home: React.FC = () => {
   };
   return (
     <div className="space-y-6">
-     
-
       {/* Hero Section */}
       <HeroSection />
       {/* How it Works */}
       <HowItWorks />
-      {/* Feature Highlights */}
-      <FeatureHighlights />
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card className='hover:shadow-xl transition-shadow'>
           <CardHeader>
@@ -146,28 +142,16 @@ const Home: React.FC = () => {
       <div className="text-center">
         <Button variant={"outline"} size={"lg"} onClick={handlePrint} className='cursor-pointer'>Export as PDF</Button>
       </div>
-
+      {/* Feature Highlights */}
+      <FeatureHighlights />
       {/* Hidden printable content */}
       <div className="hidden">
         <PrintableResume ref={printRef} jsonData={jsonData} />
       </div>
-
+      {/* Testimonials */}
       <Testimonials />
-      <div className="text-center py-12">
-        <h2 className="text-3xl font-bold mb-8">Get Started Now</h2>
-        <p className="text-lg mb-4">Join thousands of developers who have built their resumes with us.</p>
-        <Button variant="default" size="lg" className="mt-4">Start Building</Button>
-      </div>
-      <div className="text-center py-12">
-        <h2 className="text-3xl font-bold mb-8">Join the Community</h2>
-        <p className="text-lg mb-4">Follow us on social media for updates and tips.</p>
-        <Button variant="secondary" size="lg" className="mt-4">Follow Us</Button>
-      </div>
-      <div className="text-center py-12">
-        <h2 className="text-3xl font-bold mb-8">Need Help?</h2>
-        <p className="text-lg mb-4">Check out our documentation or contact support.</p>
-        <Button variant="outline" size="lg" className="mt-4">Get Help</Button>
-      </div>
+      {/* CTA */}
+      <CTASection />
     </div>
   );
 };
