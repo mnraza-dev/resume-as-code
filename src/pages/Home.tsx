@@ -32,7 +32,6 @@ const Home: React.FC = () => {
     "GraphQL",
     "Jest",
     "Cypress",
-    "Figma",
     "Webpack"
   ],
   "achievements": [
