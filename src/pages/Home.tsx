@@ -111,7 +111,7 @@ const Home: React.FC = () => {
 
   return (
     <div className="space-y-6">
-      <div className="text-center">
+      <div className="text-center py-24">
         <h1 className="text-4xl font-bold mb-2">Build Your Resume from JSON</h1>
         <p className="text-lg text-muted-foreground">Developer-friendly. Themeable. Exportable.</p>
       </div>
