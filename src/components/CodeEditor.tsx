@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import MonacoEditor from 'react-monaco-editor';
-import * as monaco from 'monaco-editor/esm/vs/editor/editor.api';
+import * as monaco from 'monaco-editor';
+
 
 interface CodeEditorProps {
   code: string;
@@ -11,7 +12,6 @@ const CodeEditor: React.FC<CodeEditorProps> = ({ code, onChange }) => {
   const editorRef = useRef<any>(null);
 
   useEffect(() => {
-    // Set up JSON schema for suggestions
     monaco.languages.json.jsonDefaults.setDiagnosticsOptions({
       validate: true,
       schemas: [
