@@ -1,20 +1,24 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import CodeEditor from '../components/CodeEditor';
 import ResumePreview from '../components/ResumePreview';
 import PrintableResume from '../components/PrintableResume';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useReactToPrint } from 'react-to-print';
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import HowItWorks from './HowItWorks';
+
+
 const Home: React.FC = () => {
-  const [jsonData, setJsonData] = useState(`{
-  "name": "MN Raza",
+  const [jsonData, setJsonData] = useState<string>(`
+    {
+  "name": "Md Noorullah Raza",
   "title": "Senior Frontend Developer",
   "summary": "Frontend engineer with 5+ years of experience building scalable web apps using React, TypeScript, and modern UI frameworks. Passionate about performance, accessibility, and pixel-perfect design.",
   "location": "Bangalore, India",
-  "email": "aarav.mehta@example.com",
-  "phone": "+91-7839123456",
-  "linkedin": "https://linkedin.com/in/aaravmehta",
-  "github": "https://github.com/aarav-mehta",
+  "email": "mnraza@example.com",
+  "phone": "+91-7867856788",
+  "linkedin": "https://linkedin.com/in/mnraza1907",
+  "github": "https://github.com/mnraza-dev",
   "skills": [
     "React",
     "TypeScript",
@@ -32,7 +36,7 @@ const Home: React.FC = () => {
     "Published an open-source Tailwind-based resume builder with 500+ GitHub stars"],
   "experience": [
     {
-      "company": "Zeta Tech",
+      "company": "XYZ Tech",
       "role": "Senior Frontend Engineer",
       "duration": "Jan 2022 – Present",
       "location": "Remote",
@@ -77,41 +81,59 @@ const Home: React.FC = () => {
     {
       "name": "DevTrackr",
       "description": "A job application tracking app for developers (React + Firebase + Chakra UI)",
-      "url": "https://devtrackr.app"
+      "url": "https://github.com/mnraza-dev/devtrackr"
     },
     {
       "name": "Tailwind Resume",
       "description": "Open-source resume builder powered by TailwindCSS and JSON",
-      "url": "https://github.com/aarav-mehta/tailwind-resume"
+      "url": "https://github.com/mnraza-dev/tailwind-resume"
     }
   ]
-}
-`);
-
+}`);
+  useEffect(() => {
+    const savedData = localStorage.getItem('resumeDraft');
+    if (savedData) {
+      setJsonData(savedData);
+    }
+  }, []);
+  useEffect(() => {
+    if (jsonData) {
+      localStorage.setItem('resumeDraft', jsonData);
+    }
+  }, [jsonData]);
   const printRef = useRef<HTMLDivElement>(null);
-
   const handlePrint = useReactToPrint({
     contentRef: printRef,
     documentTitle: 'My_Resume',
   });
-
+  const handleJsonChange = (newJson: string) => {
+    setJsonData(newJson);
+  };
   return (
     <div className="space-y-6">
-      <div className="text-center py-24">
-        <h1 className="text-4xl font-bold mb-2">Build Your Resume from JSON</h1>
-        <p className="text-lg text-muted-foreground">Developer-friendly. Themeable. Exportable.</p>
+
+      <div className="text-center space-y-4 py-24">
+        <h1 className="text-5xl font-extrabold tracking-tight text-foreground sm:text-6xl">
+          Build Your Resume from JSON
+        </h1>
+        <p className="max-w-xl mx-auto text-lg text-muted-foreground">
+          Developer-friendly. Themeable. Exportable. <br /> Build your resume from a simple JSON file. Live preview. PDF export.
+        </p>
       </div>
+{/* How it Works */}
+<HowItWorks/>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <Card>
+        <Card className='hover:shadow-xl transition-shadow'>
           <CardHeader>
             <CardTitle>Your JSON</CardTitle>
           </CardHeader>
           <CardContent>
-            <CodeEditor code={jsonData} onChange={setJsonData} />
+            <CodeEditor code={jsonData} onChange={handleJsonChange} />
           </CardContent>
         </Card>
 
-        <Card>
+        <Card className='hover:shadow-xl transition-shadow'>
           <CardHeader>
             <CardTitle>Live Preview</CardTitle>
           </CardHeader>
