@@ -115,9 +115,7 @@ const Home: React.FC = () => {
   };
   return (
     <div className="space-y-6">
-      {/* Hero Section */}
       <HeroSection />
-      {/* How it Works */}
       <HowItWorks />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card className='hover:shadow-xl transition-shadow'>
@@ -142,13 +140,11 @@ const Home: React.FC = () => {
       <div className="text-center">
         <Button variant={"outline"} size={"lg"} onClick={handlePrint} className='cursor-pointer'>Export as PDF</Button>
       </div>
-      {/* Feature Highlights */}
       <FeatureHighlights />
       {/* Hidden printable content */}
       <div className="hidden">
         <PrintableResume ref={printRef} jsonData={jsonData} />
       </div>
-      {/* Testimonials */}
       <Testimonials />
       {/* CTA */}
       <CTASection />
