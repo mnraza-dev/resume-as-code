@@ -29,11 +29,7 @@ const Home: React.FC = () => {
   ],
   "achievements": [
     "Increased monthly active users by 23% by improving UX and reducing load time across product pages",
-    "Recognized as 'Developer of the Quarter' twice at Zeta Tech for outstanding frontend contributions",
-    "Led initiative to adopt TypeScript across all frontend repos, reducing production bugs by 30%",
-    "Published an open-source Tailwind-based resume builder with 500+ GitHub stars",
-    "Spoke at React Bangalore Meetup on performance optimization in large-scale SPAs"
-  ],
+    "Published an open-source Tailwind-based resume builder with 500+ GitHub stars"],
   "experience": [
     {
       "company": "Zeta Tech",
@@ -55,16 +51,6 @@ const Home: React.FC = () => {
         "Developed user-facing modules for the merchant portal with React and Redux",
         "Optimized Lighthouse performance scores from 68 to 95+ across key pages",
         "Integrated real-time analytics tracking via Segment and Mixpanel"
-      ]
-    },
-    {
-      "company": "Infosys",
-      "role": "Frontend Intern",
-      "duration": "Jan 2019 – Jun 2019",
-      "location": "Mysore, India",
-      "description": [
-        "Built internal tools using vanilla JS and Bootstrap",
-        "Gained experience working in Agile sprints and Jira tracking"
       ]
     }
   ],
@@ -115,7 +101,6 @@ const Home: React.FC = () => {
         <h1 className="text-4xl font-bold mb-2">Build Your Resume from JSON</h1>
         <p className="text-lg text-muted-foreground">Developer-friendly. Themeable. Exportable.</p>
       </div>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <Card>
           <CardHeader>

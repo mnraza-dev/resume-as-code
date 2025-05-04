@@ -118,3 +118,13 @@
     @apply bg-background text-foreground;
   }
 }
+
+
+/* In your global CSS or a component-specific file */
+.scroll-hidden::-webkit-scrollbar {
+  display: none;
+}
+.scroll-hidden {
+  -ms-overflow-style: none;  /* IE/Edge */
+  scrollbar-width: none;     /* Firefox */
+}
